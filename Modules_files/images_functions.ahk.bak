@@ -1,0 +1,29 @@
+﻿; -------------------------------------------------------------------------------------------
+;~ "Figma_files\img\text_active.png")
+isImage_FC(img_path)
+{
+	 if ImageSearch(FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, img_path) 
+			img_is:= true
+		else
+			img_is := false
+	;~ Mousemove FoundX, FoundY
+	return {img_is : img_is, FoundX:FoundX, FoundY:FoundY}
+}
+
+isImageClick_FC(img_path, plus_x, plus_y)
+{
+	MouseGetPos start_xpos, start_ypos
+	 if ImageSearch(FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, img_path) {
+			img_is:= true
+	} else {
+			img_is := false
+			return img_is
+	}
+	;~ MouseMove FoundX, FoundX, 1
+	;~ MsgBox img_is
+	FoundX := FoundX + plus_x
+	FoundY := FoundY + plus_y
+	MouseClick left, FoundX, FoundY, 1, 1
+	MouseMove start_xpos, start_ypos, 1
+	return img_is
+}

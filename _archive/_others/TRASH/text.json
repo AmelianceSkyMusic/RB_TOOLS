@@ -1,0 +1,104 @@
+{ 
+    "Graphic" : {
+        "Figma" : {
+            "key"       : "f",
+            "image"     : "",
+            "exeName"   : ""
+        },
+        "Illustrator 2020" : {
+            "key"       : "i",
+            "image"     : "",
+            "exeName"   : ""
+        },
+        "Illustrator 2021" : {
+            "key"       : "",
+            "image"     : "",
+            "exeName"   : ""
+        },
+        "Photoshop 2021" : {
+            "key"       : "",
+            "image"     : "",
+            "exeName"   : ""
+        },
+        "CorelDRAW" : {
+            "key"       : "",
+            "image"     : "",
+            "exeName"   : ""
+        },
+        "Affinity Photo" : {
+            "key"       : "",
+            "image"     : "",
+            "exeName"   : ""
+        },
+        "Affinity Designer" : {
+            "key"       : "",
+            "image"     : "",
+            "exeName"   : ""
+        },
+        "After Effects 2020" : {
+            "key"       : "",
+            "image"     : "",
+            "exeName"   : ""
+        }
+    },
+
+    "Music" : {
+        "Studio One" : {
+            "key"       : "s",
+            "image"     : "",
+            "exeName"   : ""
+        },
+        "Reaper" : {
+            "key"       : "r",
+            "image"     : "",
+            "exeName"   : ""
+        }
+    },
+
+    "Other" : {
+        "Cent Browser" : {
+            "key"       : "b",
+            "image"     : "",
+            "exeName"   : "chrome"
+        },
+        "Telegram" : {
+            "key"       : "t",
+            "image"     : "",
+            "exeName"   : ""
+        },
+        "Viber" : {
+            "key"       : "v",
+            "image"     : "",
+            "exeName"   : ""
+        },
+        "AIMP" : {
+            "key"       : "a",
+            "image"     : "",
+            "exeName"   : ""
+        },
+        "Code" : {
+            "key"       : "c",
+            "image"     : "",
+            "exeName"   : ""
+        },
+        "Total Commander" : {
+            "key"       : "",
+            "image"     : "",
+            "exeName"   : ""
+        }
+    },
+
+    "System" : {
+        "Calculator" : {
+            "key"       : "c",
+            "image"     : "Calc.png",
+            "exeName"   : ""
+        },
+        "Notepad" : {
+            "key"       : "n",
+            "image"     : "",
+            "exeName"   : ""
+        }
+    }
+
+}

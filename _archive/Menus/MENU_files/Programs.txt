@@ -1,0 +1,13 @@
+﻿; title |                    key     icon                        run                                             options
+#   type   title                    key     icon                        run                                             options
+-   Figma                     f       |                           |                                               |qq
+          -   Illustrator 2020          i       |                           |                                               |                                                         
+-   Illustrator 2021          |       |                           |                                               |--
+-   Photoshop 2021            |       |                           |                                               |
+
+;;;; zxcv           zxcv zxc v             zxcv
+
+
+   ;;;;; -------------zxcvzxc zxc zxcv 
+
+----------

@@ -1,0 +1,148 @@
+﻿; Комментарии в YAML начинаются с символа ( # ).
+
+; Комментарии должны быть отделены от других токенов пробелами.
+
+; Отступы для пробелов используются для обозначения структуры.
+
+; Вкладки не включены в качестве отступа для файлов YAML.
+
+; Члены списка обозначаются дефисом ( — ).
+
+; Члены списка заключены в квадратные скобки и разделены запятыми.
+
+; Ассоциативные массивы представляются с помощью двоеточия
+; ( 🙂 в формате пары ключ-значение. Они заключены в фигурные скобки {} .
+
+; Несколько документов с отдельными потоками разделяются 3 дефисами (—).
+
+; Повторяющиеся узлы в каждом файле первоначальн
+; ообозначаются амперсандом ( & ) и звездочкой ( * ) позже.
+
+; YAML всегда требует использования двоеточий и запятых в качестве разделителей списков,
+; за которыми следует пробел со скалярными значениями.
+
+; Узлы должны быть помечены восклицательным знаком ( ! ) Или двойным восклицательным знаком ( !! ),
+; за которым следует строка, которую можно развернуть в URI или URL.
+
+; ------------------
+
+; How to use:
+
+; Create an Object from Text or File:
+; YamlObj:=Yaml(TextOrFilePath)
+
+; Apply/combine another Yaml document into existing object:
+; Yaml(TextOrFilePath, YamlObject)
+
+; Dump Yaml object back to text, use JSON from 5-th level only:
+; Yaml(YamlObject, 5)
+
+; Dump Yaml object back to text, use JSON only and indent until 5-th level (v1.0.4++):
+; Yaml(YamlObject, -5)
+
+; Yaml(TextOrFilePath) will result in Array of documents (objects), if you have only one document you can retrieve it directly:
+; YamlObj:=Yaml(TextOrFilePath)[1]
+
+
+
+; -----------------------------------------------------------
+; -----------------------------------------------------------
+; -----------------------------------------------------------
+; ITEMS:
+; - title: ItemName                         ——— item title (same shortcut)
+; - key: i                                  ——— item hotkey
+; - icon: Icon.png                          ——— item icon name
+; - runCode: MsgBox("Hello")                          ——— item icon name
+; - runString: D:\Others\Programs\AHK\RB TOOLS\                          ——— item icon name
+; - exeName: calc                           ——— run/activate exe name
+; - winName: Калькулятор                    ——— run/activate window title
+; - selection: Music                        ——— selection name (for future)
+; - disable: true/false, yes/no, +/-, 1/0   ——— disable menu item
+; - check: true/false, yes/no, +/-, 1/0     ——— check menu item
+; - option: +BarBreak                       ——— see manual
+; 
+; - separator: yes                          ——— separator (use once in item structure
+;                                               or multiple as separate item)
+; 
+; 
+; SUBMENU:
+; - subLevel: ">"                               ——— start sub menu level
+; - subLevel: "<"                               ——— end sub menu level
+; - subTitle: subMenuItemName                   ——— submenu item title
+; - subKey: s                                   ——— submenu item hotkey
+; - subIcon: Icon.png                           ——— item icon name
+; - subOption: +BarBreak                        ——— see manual
+; - subDisable: true/false, yes/no, +/-, 1/0    ——— disable menu item
+; - submenu:                                    ——— start submenu items
+;   - title:
+; 
+; 
+; 
+; 
+; 
+; 
+; 
+; -----------------------------------------------------------
+; -----------------------------------------------------------
+; -----------------------------------------------------------
+; title                     key     icon                        run                                             options
+- Figma                     f       |                           |                                               |
+- Illustrator 2020          i       |                           |                                               |
+- Illustrator 2021          |       |                           |                                               |
+- Photoshop 2021            |       |                           |                                               |
+- CorelDRAW                 |       |                           |                                               |
+- Affinity Designer         |       |                           |                                               |
+- Affinity Photo            |       |                           |                                               |
+- Affinity Publisher        |       |                           |                                               |
+- After Effects 2020        |       |                           |                                               |
+- Blender                   |       |                           |                                               |
+
+---------
+- Studio One                s       |                           |                                               |
+- Reaper                    r       |                           |                                               |
+
+---------
+- Cent Browser              b       |                           exe:chrome                                      |
+- Telegram                  t       |                           |                                               |
+- Viber                     v       |                           |                                               |
+- AIMP                      a       |                           |                                               |
+- Code                      |       |                           exe:Code                                        |
+- Obsidian                  |       |                           |                                               |
+
+---------
+- Total Commander           t       |                           |                                               |
+
+---------
+- Calculator                c       Calc.png                    win:Калькулятор                                 |
+- Notepad                   n       Notepad.png                 |                                               |
+
+  ; check: true
+
+---------
+> Others                    o       Others.png                  |                                               |
+  - Everything              e       |                           |                                               |
+  - Qtranslate              q       |                           |                                               |
+  - Clipdiary               c       |                           |                                               |   
+  - ShareX                  s       |                           |                                               |
+  - OBS Studio              o       |                           |                                               |
+  ---------
+  - Carnac
+  <
+
+---------
+- ↓↓↓↓ AHK ↓↓↓↓             |       AHK.png                     |                                               "disable: true, option: +BarBreak"
+
+---------
+- CreateDir                 |       CreateDir.png               |                                               |
+
+---------
+- |                         |       |                           |                                               |
+- AHK Help v2a122           |       HelpCHM.png                 |                                               |
+
+---------
+- |                         |       |                           |                                               |
+- RB TOOLS                  |       Folder.png                  pth:D:\Others\Programs\AHK\RB TOOLS\            |
+
+---------
+- |                         |       |                           |                                               |
+- Programs.txt              |       |                           |                                               |

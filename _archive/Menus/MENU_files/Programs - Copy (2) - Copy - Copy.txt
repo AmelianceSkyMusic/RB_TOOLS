@@ -1,0 +1,61 @@
+﻿#   type   title                     key    icon                run                                             options
+    -      Figma                     f      |                   |                                               |
+    -      Illustrator 2020          i      |                   |                                               |
+    -      Illustrator 2021          |      |                   |                                               |
+    -      Photoshop 2021            |      |                   |                                               |
+    -      CorelDRAW                 |      |                   |                                               |
+    -      Affinity Designer         |      |                   |                                               |
+    -      Affinity Photo            |      |                   |                                               |
+    -      Affinity Publisher        |      |                   |                                               |
+    -      After Effects 2020        |      |                   |                                               |
+    -      Blender                   |      |                   |                                               |
+    
+    ----
+    -      Studio One                s      |                   |                                               |
+    -      Reaper                    r      |                   |                                               |
+    
+    ----
+    -      Cent Browser              b      |                   exe:chrome                                      |
+    -      Telegram                  t      |                   |                                               |
+    -      Viber                     v      |                   |                                               |
+    -      AIMP                      a      |                   |                                               |
+    -      Code                      |      |                   exe:Code                                        |
+    -      Obsidian                  |      |                   |                                               |
+    
+    ----
+    -      Total Commander           t      |                   |                                               |
+    
+    ----
+    -      Calculator                c      Calc.png            win:Калькулятор                                 |
+    -      Notepad                   n      Notepad.png         |                                               |
+    
+            ; check: true
+    
+    ----
+    >      Others                    o      Others.png          |                                               |
+           -   Everything            e      |                   |                                               |
+           -   Qtranslate            q      |                   |                                               |
+           -   Clipdiary             c      |                   |                                               |   
+           -   ShareX                s      |                   |                                               |
+           -   OBS Studio            o      |                   |                                               |
+           ----
+           -   Carnac                |      |                   |                                               |
+           <
+    
+    ----
+    -      ↓↓↓↓ AHK ↓↓↓↓             |      AHK.png             |                                               "disable: true, option: +BarBreak"
+    
+    ----
+    -      CreateDir                 |      CreateDir.png       |                                               |
+    
+    ----
+    -      |                         |      |                   |                                               |
+    -      AHK Help v2a122           |      HelpCHM.png         |                                               |
+    
+    ----
+    -      |                         |      |                   |                                               |
+    -      RB TOOLS                  |      Folder.png          pth:D:\Others\Programs\AHK\RB TOOLS\            |
+    
+    ----
+    -      |                         |      |                   |                                               |
+    -      Programs.txt              |      |                   |                                               |

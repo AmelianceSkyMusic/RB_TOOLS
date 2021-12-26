@@ -1,0 +1,87 @@
+﻿; -------------------------------------------------------------------------------------------
+; ---------- Win+Arrows — Подвинуть активное окно на 10 пкс
+; Move active of window on 10px
+#UP::
+WinGetPos win_x, win_y
+WinMove win_x,  win_y-10
+return
+#DOWN::
+WinGetPos win_x, win_y
+WinMove win_x,  win_y+10
+return
+#LEFT::
+WinGetPos win_x, win_y
+WinMove win_x-10,  win_y
+return
+#RIGHT::
+WinGetPos win_x, win_y
+WinMove win_x+10,  win_y
+return
+
+; -------------------------------------------------------------------------------------------
+; ---------- Win+Shift+Arrows — Изменить размер активного окна на 10 пкс
+; Change size of active window on 10px
+#+UP::
+WinGetPos win_x, win_y, win_width, win_height
+WinMove win_x, win_y-50, win_width,  win_height
+return
+#+DOWN::
+WinGetPos win_x, win_y, win_width, win_height
+WinMove win_x, win_y+50, win_width,  win_height
+return
+#+LEFT::
+WinGetPos win_x, win_y, win_width, win_height
+WinMove win_x-50, win_y, win_width,  win_height
+return
+#+RIGHT::
+WinGetPos win_x, win_y, win_width, win_height
+WinMove win_x+50, win_y, win_width,  win_height
+return
+
+; -------------------------------------------------------------------------------------------
+; ---------- Win+Home — ///////////////////////////////////////////////////////////////////////
+#HOME::
+WinGetPos win_x, win_y, win_width, win_height
+;~ WinMove win_x, 0, win_width,  win_height
+WinMove (A_ScreenWidth/2)-(win_width/2), (A_ScreenHeight/2)-(win_height/2)
+return
+
+; -------------------------------------------------------------------------------------------
+; ---------- Win+Ctrl+Arrows — Подвинуть курсор мишы на 1 пкс
+; Move mouse cursore of window on 1px
+^#UP::
+MouseGetPos start_xpos, start_ypos
+MouseMove start_xpos, start_ypos-1, 1
+return
+^#DOWN::
+MouseGetPos start_xpos, start_ypos
+MouseMove start_xpos, start_ypos+1, 1
+return
+^#LEFT::
+MouseGetPos start_xpos, start_ypos
+MouseMove start_xpos-1, start_ypos, 1
+return
+^#RIGHT::
+MouseGetPos start_xpos, start_ypos
+MouseMove start_xpos+1, start_ypos, 1
+return
+
+; -------------------------------------------------------------------------------------------
+; ---------- Win+Ctrl+Shift+Arrows — Подвинуть курсор мишы на 10 пкс
+; Move mouse cursore of window on 10px
+^+#UP::
+MouseGetPos start_xpos, start_ypos
+MouseMove start_xpos, start_ypos-10, 1
+return
+^+#DOWN::
+MouseGetPos start_xpos, start_ypos
+MouseMove start_xpos, start_ypos+10, 1
+return
+^+#LEFT::
+MouseGetPos start_xpos, start_ypos
+MouseMove start_xpos-10, start_ypos, 1
+return
+^+#RIGHT::
+MouseGetPos start_xpos, start_ypos
+MouseMove start_xpos+10, start_ypos, 1
+return

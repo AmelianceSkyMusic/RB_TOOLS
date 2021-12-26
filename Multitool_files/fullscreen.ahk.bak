@@ -1,0 +1,40 @@
+﻿#+f:: ; Win+F  - fullscreen
+
+if menu_toggle := !menu_toggle
+
+    {
+        handle := DllCall("GetMenu", "Ptr", WinActive("A"))
+
+        DllCall("SetMenu", "Ptr", WinActive("A"), "Ptr", 0)
+    
+    WinSetStyle "-0x1c00000", "A" ; bordersline
+        ;~ WinSet, Style, -0x1c00000,  ;CAPTION|DLGFRAME|MAXIMIZE
+
+        hMenu := handle
+
+        WinMaximize
+return
+    }
+    else
+
+    {
+        DllCall("SetMenu", "Ptr", WinActive("A"), "Ptr", hMenu)
+        WinSetStyle "+0x1c00000", "A" ; bordersline
+        ;~ WinSet, Style, +0x1c00000,  ;CAPTION|DLGFRAME|MAXIMIZE
+
+        hMenu := 0
+
+WinRestore
+        return
+    }
+	
+return
+
+; -------------------------------------------------------------------------------------------
+; -------------------------------------------------------------------------------------------
+; -------------------------------------------------------------------------------------------
+;# Win (Windows logo key) 
+;! Alt 
+;^ Control 
+;+ Shift 
+;~ SoundPlay "*-1"

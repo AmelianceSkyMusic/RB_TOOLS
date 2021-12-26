@@ -1,0 +1,74 @@
+{
+	"meta": {
+		"id": "wonderful",
+		"uuid": "70456b1b-72ae-43ed-85cd-3e19ccf4b864",
+		"sort": "230207100",
+		"src": "collegiate",
+		"section": "alpha",
+		"stems": ["wonderful", "wonderfuller", "wonderfullest", "wonderfully", "wonderfulness", "wonderfulnesses"],
+		"offensive": false
+	},
+	"hwi": {
+		"hw": "won*der*ful",
+		"prs": [{
+			"mw": "\u02c8w\u0259n-d\u0259r-f\u0259l",
+			"sound": {
+				"audio": "wonder03",
+				"ref": "c",
+				"stat": "1"
+			}
+		}]
+	},
+	"fl": "adjective",
+	"def": [{
+		"sseq": [
+			[
+				["sense", {
+					"sn": "1",
+					"dt": [
+						["text", "{bc}exciting {a_link|wonder} {bc}{sx|marvelous||}, {sx|astonishing||} "],
+						["vis", [{
+							"t": "a sight {wi}wonderful{\/wi} to behold"
+						}]]
+					]
+				}]
+			],
+			[
+				["sense", {
+					"sn": "2",
+					"dt": [
+						["text", "{bc}unusually good {bc}{sx|admirable||} "],
+						["vis", [{
+							"t": "did a {wi}wonderful{\/wi} job"
+						}]]
+					]
+				}]
+			]
+		]
+	}],
+	"uros": [{
+		"ure": "won*der*ful*ly",
+		"prs": [{
+			"mw": "\u02c8w\u0259n-d\u0259r-f(\u0259-)l\u0113",
+			"sound": {
+				"audio": "wonder04",
+				"ref": "c",
+				"stat": "1"
+			}
+		}],
+		"fl": "adverb"
+	}, {
+		"ure": "won*der*ful*ness",
+		"prs": [{
+			"mw": "\u02c8w\u0259n-d\u0259r-f\u0259l-n\u0259s",
+			"sound": {
+				"audio": "wonder05",
+				"ref": "c",
+				"stat": "1"
+			}
+		}],
+		"fl": "noun"
+	}],
+	"date": "before 12th century{ds||1||}",
+	"shortdef": ["exciting wonder : marvelous, astonishing", "unusually good : admirable"]
+}

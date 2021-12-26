@@ -1,0 +1,113 @@
+﻿html {
+  overflow: hidden;
+  min-width: min-content;
+  min-height: min-content;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(left, rgb(173, 0, 107), rgb(70, 28, 149));
+  overflow: hidden;
+}
+
+.main-container {
+  padding-top: 24px;
+  vertical-align: middle;
+  min-width: min-content;
+  min-height: min-content;
+
+}
+
+h1, h2 {
+  font-family: "Montserrat", "Comic Sans", cursive;
+  color: white;
+  margin: auto;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  min-width: max-content;
+  min-height: max-content;
+  padding: 16px;
+}
+
+button {
+  appearance: none;
+  border: 0;
+  border-radius: 4px;
+  background: #4676D7;
+  color: #fff;
+  padding: 4px 32px;
+  font-size: 16px;
+}
+button:hover {
+  background: #1d49aa;
+}
+
+.container-main {
+  flow: vertical;
+  /* horizontal-align: middle; */
+}
+
+.caption {
+  flow: horizontal;
+  border-spacing:*; 
+  margin: 0 4px;
+  color: #ffffff;
+  /* vertical-align: top; */
+  height: 24px;
+  border-bottom: 1px solid #ffffff;
+  opacity: 0.6;
+  /* background-color: #303030; */
+}
+
+.caption>p{
+  /* padding: 0 4px; */
+  margin: 8px;
+}
+
+.caption-buttons {
+  flow: horizontal;
+  /* padding-right: -4px; */
+}
+
+.caption-buttons>p {
+  /* padding: 0 8px; */
+  margin: 8px;
+}
+
+.caption-buttons>p:hover {
+    color: #d1d1d1;
+}
+
+.container-1{
+  flow: horizontal;
+  horizontal-align: middle;
+  /* border: 1px solid white; */
+
+  /* border-spacing: *;  */
+}
+
+
+.btn{
+    margin: 0 8px;
+    cursor: pointer;
+}
+
+/* button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #cbd6ee;
+} */
+.test{
+  flow: horizontal;
+  horizontal-align: middle;
+}
+
+.test>input{
+  appearance: none;
+  border: 0;
+  border-radius: 4px;
+  background: #4676D7;
+  color: #fff;
+  padding: 4px 32px;
+  font-size: 16px;
+}

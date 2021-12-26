@@ -1,0 +1,236 @@
+# Комментарии в YAML начинаются с символа ( # ).
+
+# Комментарии должны быть отделены от других токенов пробелами.
+
+# Отступы для пробелов используются для обозначения структуры.
+
+# Вкладки не включены в качестве отступа для файлов YAML.
+
+# Члены списка обозначаются дефисом ( — ).
+
+# Члены списка заключены в квадратные скобки и разделены запятыми.
+
+# Ассоциативные массивы представляются с помощью двоеточия
+# ( 🙂 в формате пары ключ-значение. Они заключены в фигурные скобки {} .
+
+# Несколько документов с отдельными потоками разделяются 3 дефисами (—).
+
+# Повторяющиеся узлы в каждом файле первоначальн
+# ообозначаются амперсандом ( & ) и звездочкой ( * ) позже.
+
+# YAML всегда требует использования двоеточий и запятых в качестве разделителей списков,
+# за которыми следует пробел со скалярными значениями.
+
+# Узлы должны быть помечены восклицательным знаком ( ! ) Или двойным восклицательным знаком ( !! ),
+# за которым следует строка, которую можно развернуть в URI или URL.
+
+# ------------------
+
+# How to use:
+
+# Create an Object from Text or File:
+# YamlObj:=Yaml(TextOrFilePath)
+
+# Apply/combine another Yaml document into existing object:
+# Yaml(TextOrFilePath, YamlObject)
+
+# Dump Yaml object back to text, use JSON from 5-th level only:
+# Yaml(YamlObject, 5)
+
+# Dump Yaml object back to text, use JSON only and indent until 5-th level (v1.0.4++):
+# Yaml(YamlObject, -5)
+
+# Yaml(TextOrFilePath) will result in Array of documents (objects), if you have only one document you can retrieve it directly:
+# YamlObj:=Yaml(TextOrFilePath)[1]
+
+- program: Figma
+  key: f
+  image: null
+  exeName: null
+  selection: Graphic
+  separator: yes
+
+- program: Illustrator 2020
+  key: i
+  image: null
+  exeName: null
+  selection: Graphic
+
+- program: Illustrator 2021
+  key: null
+  image: null
+  exeName: null
+  selection: Graphic
+
+- program: Photoshop 2021
+  key: null
+  image: null
+  exeName: null
+  selection: Graphic
+
+- program: CorelDRAW
+  key: null
+  image: null
+  exeName: null
+  selection: Graphic
+
+- program: Affinity Photo
+  key: null
+  image: null
+  exeName: null
+  selection: Graphic
+
+- program: Affinity Designer
+  key: f
+  image: null
+  exeName: null
+  selection: Graphic
+
+- program: After Effects 2020
+  key: null
+  image: null
+  exeName: null
+  selection: Graphic
+
+# ----------------------------
+- program: Studio One
+  key: s
+  image: null
+  exeName: null
+  selection: Music
+
+- program: Reaper
+  key: r
+  image: null
+  exeName: null
+  selection: Music
+
+# ----------------------------
+- program: Cent Browser
+  key: b
+  image: null
+  exeName: chrome
+  selection: Others
+  
+- program: Telegram
+  key: t
+  image: null
+  exeName: null
+  selection: Others
+
+- program: Viber
+  key: v
+  image: null
+  exeName: null
+  selection: Others
+
+- program: AIMP
+  key: a
+  image: null
+  exeName: null
+  selection: Others
+
+- program: Code
+  key: c
+  image: null
+  exeName: null
+  selection: Others
+
+- program: Total Commander
+  key: t
+  image: null
+  exeName: null
+  selection: Others
+
+# ----------------------------
+- program: Calculator
+  key: c
+  image: null
+  exeName: chrome
+  selection: System
+
+- program: Notepad
+  key: n
+  image: null
+  exeName: null
+  selection: System
+
+
+
+    
+# Graphic:
+#   - program: Figma
+#     key: f
+#     image: null
+#     exeName: null
+#   - program: Illustrator 2020
+#     key: i
+#     image: null
+#     exeName: null
+#   - program: Illustrator 2021
+#     key: null
+#     image: null
+#     exeName: null
+#   - program: Photoshop 2021
+#     key: null
+#     image: null
+#     exeName: null
+#   - program: CorelDRAW
+#     key: null
+#     image: null
+#     exeName: null
+#   - program: Affinity Photo
+#     key: null
+#     image: null
+#     exeName: null
+#   - program: Affinity Designer
+#     key: f
+#     image: null
+#     exeName: null
+#   - program: After Effects 2020
+#     key: null
+#     image: null
+#     exeName: null
+# Music:
+#   - program: Studio One
+#     key: s
+#     image: null
+#     exeName: null
+#   - program: Reaper
+#     key: r
+#     image: null
+#     exeName: null
+# Others:
+#   - program: Cent Browser
+#     key: b
+#     image: null
+#     exeName: chrome
+#   - program: Telegram
+#     key: t
+#     image: null
+#     exeName: null
+#   - program: Viber
+#     key: v
+#     image: null
+#     exeName: null
+#   - program: AIMP
+#     key: a
+#     image: null
+#     exeName: null
+#   - program: Code
+#     key: c
+#     image: null
+#     exeName: null
+#   - program: Total Commander
+#     key: t
+#     image: null
+#     exeName: null
+# System:
+#   - program: Calculator
+#     key: c
+#     image: null
+#     exeName: chrome
+#   - program: Notepad
+#     key: n
+#     image: null
+#     exeName: null

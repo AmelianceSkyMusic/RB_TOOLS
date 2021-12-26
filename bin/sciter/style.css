@@ -1,0 +1,59 @@
+﻿html {
+  overflow: hidden;
+  min-width: min-content;
+  min-height: min-content;
+}
+
+body {
+  margin: 0;
+  vertical-align: middle;
+  background: linear-gradient(left, rgb(173, 0, 107), rgb(70, 28, 149));
+  min-width: min-content;
+  min-height: min-content;
+  overflow: hidden;
+}
+
+h1, h2 {
+  font-family: "Montserrat", "Comic Sans", cursive;
+  color: white;
+  margin: auto;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  min-width: max-content;
+  min-height: max-content;
+}
+
+
+button {
+  appearance: none;
+  border: 0;
+  border-radius: 4px;
+  background: #4676D7;
+  color: #fff;
+  padding: 4px 32px;
+  font-size: 16px;
+}
+button:hover {
+  background: #1d49aa;
+}
+
+.container-1{
+  flow: horizontal;
+  horizontal-align: middle;
+  /* border: 1px solid white; */
+
+  /* border-spacing: *;  */
+}
+
+.container-1 div{
+  /* padding: 10px; */
+}
+.btn{
+    margin: 0 8px;
+}
+
+/* button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #cbd6ee;
+} */

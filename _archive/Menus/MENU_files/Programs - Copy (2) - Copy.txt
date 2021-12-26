@@ -1,0 +1,33 @@
+﻿
+; title                     key     icon                        run                                             options
+-   Cent Browser            b       |                           exe:chrome                                      |
+-   Telegram                t       |                           |                                               |
+-   Viber                   v       |                           |                                               |
+-   AIMP                    a       |                           |                                               |
+-   Code                    |       |                           exe:Code                                        |
+-   Obsidian                |       |                           |                                               |
+
+----------
+-   Total Commander         t       |                           |                                               |
+
+----------
+-   Calculator              c       Calc.png                    win:Калькулятор                                 |
+-   Notepad                 n       Notepad.png                 |                                               |
+
+----------
+>   Others                  o       Others.png                  |                                               |
+  -   Everything            e       |                           |                                               |
+  -   Qtranslate            q       |                           |                                               |
+  -   Clipdiary             c       |                           |                                               |   
+  -   ShareX                s       |                           |                                               |
+  -   OBS Studio            o       |                           |                                               |
+  ----------
+  -   Carnac                |       |                           |                                               |
+  <
+
+----------
+-   ↓↓↓↓ AHK ↓↓↓↓           |       AHK.png                     |                                               disable:true, option:+BarBreak
+
+----------
+-   |                       |       |                           |                                               |
+-   RB TOOLS                |       Folder.png                  pth:D:\Others\Programs\AHK\RB TOOLS\            |

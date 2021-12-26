@@ -1,0 +1,36 @@
+﻿; -------------------------------------------------------------------------------------------
+; ---------- Win+F3 — перевести буквы в верхний регистр
+#F3:: 
+{
+Clipboard := ""
+SendInput "^{vk43}"    ;  "C"
+;~ ClipWait 1 
+if !ClipWait(2)
+ {
+  ;~ DllCall("Char" . (up ? "Upper" : "Lower"), Str, string := Clipboard)
+  string := DllCall("CharUpper", "Str", DllCall("CharLower", "Str", Clipboard, "Str"), "Str")
+  Clipboard := string
+
+ Sleep 100
+ SendInput "^{vk56}"    ;  "V"
+ }
+}
+
+; -------------------------------------------------------------------------------------------
+; ---------- Win+F4 — перевести буквы в нижний регистр
+#F4:: 
+{
+Clipboard := ""
+SendInput "^{vk43}"    ;  "C"
+ClipWait 1 
+if !ClipWait(2)
+{
+
+;~ DllCall("Char" . (up ? "Upper" : "Lower"), Str, string := Clipboard)
+string := DllCall("CharLower", "Str", DllCall("CharUpper", "Str", Clipboard, "Str"), "Str")
+Clipboard := string
+
+Sleep 100
+SendInput "^{vk56}"    ;  "V"
+}
+}

@@ -1,0 +1,26 @@
+﻿+Home::
+Send "{F2}"
+Send "{Home}"
+Send "^V"
+Send "{Tab}"
+return
+
++End::
+Send "{F2}"
+Send "{End}"
+Send "^V"
+Send "{Tab}"
+return
+
+$F2::
+Send "{F2}"
+Send "{Home}"
+Send "{Right}"
+Send "{Right}"
+Send "{Del}"
+Send "{Del}"
+Send "{Del}"
+Send "{Del}"
+Send "{Del}"
+Send "{Tab}"
+return
