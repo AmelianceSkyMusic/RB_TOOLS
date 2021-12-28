@@ -64,28 +64,28 @@
 ::fw wr::flex-wrap: wrap-reverse;   ; - Элементы автоматически переносятся на новую строку, но строки расположены в обратном порядке.
 
 ;flex-flow
-::ff r n::flex-flow: row nowrap;                ; -  
-::ff r w::flex-flow: row wrap;                ; -  
-::ff r wr::flex-flow: row wrap-reverse;                ; -  
-::ff rr n::flex-flow: row-reverse nowrap;       ; - 
-::ff rr w::flex-flow: row-reverse wrap;       ; - 
-::ff rr wr::flex-flow: row-reverse wrap-reverse;       ; - 
-::ff c n::flex-flow: column nowrap;             ; - 
-::ff c w::flex-flow: column wrap;             ; - 
-::ff c wr::flex-flow: column wrap-reverse;             ; - 
-::ff cr n::flex-flow: column-reverse nowrap;    ; - 
-::ff cr w::flex-flow: column-reverse wrap;    ; - 
-::ff cr wr::flex-flow: column-reverse wrap-reverse;    ; - 
+::ff r n::flex-flow: row nowrap;                        ; -  
+::ff r w::flex-flow: row wrap;                          ; -  
+::ff r wr::flex-flow: row wrap-reverse;                 ; -  
+::ff rr n::flex-flow: row-reverse nowrap;               ; - 
+::ff rr w::flex-flow: row-reverse wrap;                 ; - 
+::ff rr wr::flex-flow: row-reverse wrap-reverse;        ; - 
+::ff c n::flex-flow: column nowrap;                     ; - 
+::ff c w::flex-flow: column wrap;                       ; - 
+::ff c wr::flex-flow: column wrap-reverse;              ; - 
+::ff cr n::flex-flow: column-reverse nowrap;            ; - 
+::ff cr w::flex-flow: column-reverse wrap;              ; - 
+::ff cr wr::flex-flow: column-reverse wrap-reverse;     ; - 
 
-::ff n r::flex-flow: nowrap row;                ; -  
-::ff w r::flex-flow: wrap row;                ; -  
-::ff wr r::flex-flow: wrap-reverse row;                ; -  
-::ff n rr::flex-flow: nowrap row-reverse;       ; - 
-::ff rw r::flex-flow: wrap row-reverse;       ; - 
-::ff wr rr::flex-flow: wrap-reverse row-reverse;       ; - 
-::ff n c::flex-flow: nowrap column;             ; - 
-::ff w c::flex-flow: wrap column;             ; - 
-::ff wr c::flex-flow: wrap-reverse column;             ; - 
-::ff n cr::flex-flow: nowrap column-reverse;    ; - 
-::ff cw r::flex-flow: wrap column-reverse;    ; - 
-::ff wr cr::flex-flow: wrap-reverse column-reverse;    ; - 
+::ff n r::flex-flow: nowrap row;                        ; -  
+::ff w r::flex-flow: wrap row;                          ; -  
+::ff wr r::flex-flow: wrap-reverse row;                 ; -  
+::ff n rr::flex-flow: nowrap row-reverse;               ; - 
+::ff rw r::flex-flow: wrap row-reverse;                 ; - 
+::ff wr rr::flex-flow: wrap-reverse row-reverse;        ; - 
+::ff n c::flex-flow: nowrap column;                     ; - 
+::ff w c::flex-flow: wrap column;                       ; - 
+::ff wr c::flex-flow: wrap-reverse column;              ; - 
+::ff n cr::flex-flow: nowrap column-reverse;            ; - 
+::ff cw r::flex-flow: wrap column-reverse;              ; - 
+::ff wr cr::flex-flow: wrap-reverse column-reverse;     ; - 
