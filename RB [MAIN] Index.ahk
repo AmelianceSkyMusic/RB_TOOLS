@@ -97,6 +97,7 @@ snippets.dir := A_ScriptDir "\Snippets\"
 #Include RB [SNIPPET] HTML.ahk
 #Include RB [SNIPPET] CSS.ahk
 #Include RB [SNIPPET] JS.ahk
+#Include RB [SNIPPET] GIT.ahk
 #Include RB [SNIPPET] Work.ahk
 #Include RB [SNIPPET] Others.ahk
 #Include RB [SNIPPET] HotKeys.ahk
