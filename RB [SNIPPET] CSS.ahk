@@ -22,48 +22,62 @@
 ; ================================================================
 #HotIf not WinActive("ahk_exe code.exe") and not WinActive("ahk_exe photoshop.exe") and not WinActive("ahk_exe illustrator.exe") and not WinActive("ahk_exe figma.exe")
 
-; ------------------------------------
-; --------------- FLEX ---------------
-; ------------------------------------
+; ==================================================================
+; ------------------------------ FLEX ------------------------------
+; ==================================================================
+::df::display: flex;
+; ::d f::display: grid;
+; ::d f::display: float;
+; ::d f::display: inline;
+; ::d f::display: block;
+; ::d f::display: inline-block; ;<button>, <input>, <textarea>, <select>.
 
-; justify-content
-::jc s::justify-content: start;             ; - (flex-start) Элементы выравниваются по левой стороне контейнера.
-::jc e::justify-content: end;               ; - (flex-end) Элементы выравниваются по правой стороне контейнера.
-::jc c::justify-content: center;            ; - Элементы выравниваются по центру контейнера.
-::jc sb::justify-content: space-between;    ; - Элементы отображаются с одинаковыми отступами между ними.
-::jc sa::justify-content: space-around;     ; - Элементы отображаются с одинаковыми отступами вокруг них.
-::jc se::justify-content: space-evenly;     ; - 
+; ::d f::box-sizing: border-box; ;Алгоритм расчёта ширины включая все кроме margin
+
+; justify-content - выравнивает элементы горизонтально
+::jcs::justify-content: start;             ; - (flex-start) Элементы выравниваются по левой стороне контейнера.
+::jcfs::justify-content: flex-start;             ; - (flex-start) Элементы выравниваются по левой стороне контейнера.
+::jce::justify-content: end;               ; - (flex-end) Элементы выравниваются по правой стороне контейнера.
+::jcfe::justify-content: flex-end;               ; - (flex-end) Элементы выравниваются по правой стороне контейнера.
+::jcc::justify-content: center;            ; - Элементы выравниваются по центру контейнера.
+::jcsb::justify-content: space-between;    ; - Элементы отображаются с одинаковыми отступами между ними.
+::jcsa::justify-content: space-around;     ; - Элементы отображаются с одинаковыми отступами вокруг них.
+::jcse::justify-content: space-evenly;     ; - Элементы отображаются с одинаковыми отступами между и за ними.
 
 
-;align-items
-::ai s::align-items: start;     ; - (flex-start) Элементы выравниваются по верхнему краю контейнера.
-::ai e::align-items: end;       ; - (flex-end) Элементы выравниваются по нижнему краю контейнера.
-::ai c::align-items: center;    ; - Элементы выравниваются вертикально по центру контейнера.
-::ai b::align-items: baseline;  ; - Элементы отображаются на базовой линии контейнера.
-::ai st::align-items: stretch;  ; - Элементы растягиваются, чтоб заполнить контейнер.
+;align-items -  выравнивает элементы вертикально
+::ais::align-items: start;     ; - (flex-start) Элементы выравниваются по верхнему краю контейнера.
+::aifs::align-items: flex-start;     ; - (flex-start) Элементы выравниваются по верхнему краю контейнера.
+::aie::align-items: end;       ; - (flex-end) Элементы выравниваются по нижнему краю контейнера.
+::aife::align-items: flex-end;       ; - (flex-end) Элементы выравниваются по нижнему краю контейнера.
+::aic::align-items: center;    ; - Элементы выравниваются вертикально по центру контейнера.
+::aib::align-items: baseline;  ; - Элементы отображаются на базовой линии контейнера.
+::aist::align-items: stretch;  ; - Элементы растягиваются, чтоб заполнить контейнер.
 
-;flex-direction
-::fd r::flex-direction: row;                ; - элементы размещаются по направлению текста.
-::fd rr::flex-direction: row-reverse;       ; - элементы отображаются в обратном порядке к направлению текста.
-::fd c::flex-direction: column;             ; - элементы располагаются сверху вниз.
-::fd cr::flex-direction: column-reverse;    ; - элементы располагаются снизу вверх.
+;flex-direction - задает направление, в котором будут расположены элементы в контейнере
+::fdr::flex-direction: row;                ; - элементы размещаются по направлению текста.
+::fdrr::flex-direction: row-reverse;       ; - элементы отображаются в обратном порядке к направлению текста.
+::fdc::flex-direction: column;             ; - элементы располагаются сверху вниз.
+::fdcr::flex-direction: column-reverse;    ; - элементы располагаются снизу вверх.
 
 ;order
-::o::order:{SPACE};{LEFT} ; - установка порядка, может быть как плюс так и минус
+::o::order:{SPACE}0;{LEFT}+{LEFT} ; - установка порядка, может быть как плюс так и минус
 
-;align-self
-::as s::align-self: start;     ; - (flex-start) Элементы выравниваются по верхнему краю контейнера.
-::as e::align-self: end;       ; - (flex-end) Элементы выравниваются по нижнему краю контейнера.
-::as c::align-self: center;    ; - Элементы выравниваются вертикально по центру контейнера.
-::as b::align-self: baseline;  ; - Элементы отображаются на базовой линии контейнера.
-::as st::align-self: stretch;  ; - Элементы растягиваются, чтоб заполнить контейнер.
+;align-self - выравнивает конкретный один элемент вертикально
+::ass::align-self: start;     ; - (flex-start) Элемент выравниваются по верхнему краю контейнера.
+::asfs::align-self: flex-start;     ; - (flex-start) Элемент выравниваются по верхнему краю контейнера.
+::ase::align-self: end;       ; - (flex-end) Элемент выравниваются по нижнему краю контейнера.
+::asfe::align-self: flex-end;       ; - (flex-end) Элемент выравниваются по нижнему краю контейнера.
+::asc::align-self: center;    ; - Элемент выравниваются вертикально по центру контейнера.
+::asb::align-self: baseline;  ; - Элемент отображаются на базовой линии контейнера.
+::asst::align-self: stretch;  ; - Элемент растягиваются, чтоб заполнить контейнер.
 
-;flex-wrap
-::fw n::flex-wrap: nowrap;          ; - Размеры элементов устанавливаются автоматически, чтоб они поместились в один ряд.
-::fw w::flex-wrap: wrap;            ; - Элементы автоматически переносятся на новую строку.
-::fw wr::flex-wrap: wrap-reverse;   ; - Элементы автоматически переносятся на новую строку, но строки расположены в обратном порядке.
+;flex-wrap - размещение элементов
+::fwn::flex-wrap: nowrap;          ; - Размеры элементов устанавливаются автоматически, чтоб они поместились в один ряд.
+::fww::flex-wrap: wrap;            ; - Элементы автоматически переносятся на новую строку.
+::fwwr::flex-wrap: wrap-reverse;   ; - Элементы автоматически переносятся на новую строку, но строки расположены в обратном порядке.
 
-;flex-flow
+;flex-flow - flex-direction + flex-wrap
 ::ff r n::flex-flow: row nowrap;                        ; -  
 ::ff r w::flex-flow: row wrap;                          ; -  
 ::ff r wr::flex-flow: row wrap-reverse;                 ; -  
@@ -89,3 +103,39 @@
 ::ff n cr::flex-flow: nowrap column-reverse;            ; - 
 ::ff cw r::flex-flow: wrap column-reverse;              ; - 
 ::ff wr cr::flex-flow: wrap-reverse column-reverse;     ; - 
+
+;align-content - как несколько рядов должны отделяться друг от друга
+::ac s::align-content: start;           ; - (flex-start) Ряды группируются в верхней части контейнера.
+::ac fs::align-content: flex-start;           ; - (flex-start) Ряды группируются в верхней части контейнера.
+::ac e::align-content: end;             ; - (flex-end) Ряды группируются в нижней части контейнера.
+::ac fe::align-content: flex-end;             ; - (flex-end) Ряды группируются в нижней части контейнера.
+::ac c::align-content: center;          ; - Ряды группируются вертикально по центру контейнера.
+::ac sb::align-content: space-between;  ; - Ряды отображаются с одинаковыми расстояниями между ними.
+::ac sa::align-content: space-around;   ; - Ряды отображаются с одинаковыми расстояниями вокруг них.
+::ac s::align-content: stretch;         ; - Ряды растягиваются, чтоб заполнить контейнер равномерно.
+
+::fb::flex-basis:{SPACE};{LEFT} ; - задает ширину контейнера (в пикселях или процентах)
+
+::fg::flex-grow:{SPACE};{LEFT} ; - запрещяет растягивать контейнер внутренними элементами (1 - можно, 0 - нельзя)
+::fg::flex-shrink:{SPACE};{LEFT} ; - запрещяет сужать контейнер (1 - можно, 0 - нельзя)
+::fx::flex:{SPACE};{LEFT} ; - 
+
+; ==================================================================
+; ---------------------------- POSITION ----------------------------
+; ==================================================================
+
+;position
+
+::z::z-index:{SPACE}0;{LEFT}+{LEFT}
+
+::p st::position: static;    ; - DEFAULT элемент позиционируется относительно родителя и соседних элементов в общем потоке
+::p r::position: relative;   ; - относительно изначального положения в коде, оставив за собой пустое место (с left top right bottom)
+::p a::position: absolute;`ntop: 0px;`nleft: 0px;   ; - выываеться из потока и зависает на полотне сайта (НЕ экрана).
+                                                    ;   Начинает вести себя как строчный элемент.
+                                                    ;   Родителю нужно указать position: relative; и width: 100;
+::p f::position: fixed;      ; - Прилипает к экрану
+::p s::position: sticky;     ; - Прилипает к экрану при прокрутке
+::p i::position: inherit;    ; - Наследует значение от родителя
+
+
+
