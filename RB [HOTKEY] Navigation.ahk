@@ -7,6 +7,7 @@ CapsLock & l::      Send("{Blind}{Right}")
 CapsLock & k::      Send("{Blind}{Down}")
 CapsLock & u::      Send("{Blind}{Home}")
 CapsLock & o::      Send("{Blind}{End}")
+CapsLock & n::      Send("{Blind}{End}{Enter}")
 
 
 
