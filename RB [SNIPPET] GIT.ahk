@@ -26,9 +26,11 @@
 ::g s::git status --short{ENTER}    ; - посмотреть статус
 ::g p::git push{ENTER}              ; - закинуть изминения из гита на репозиторий
 
-::g cm::git commit -m "             ; - записать коммит в гит
+::g cm::git commit -m ""{LEFT}      ; - записать коммит в гит
 ::g cb::git checkout -b{SPACE}      ; - создать ветку и перейти на нее
 ::g c::git checkout                 ; - перейти на ветку
 ::g b::git branch                   ; - посмотреть ветки
 ::g r.::git reset .                 ; - отменить git add
 ::g r::git reset                    ; - отменить git add
+
+::g ac::git add .{ENTER}{SLEEP 200}git commit -m ""{LEFT}   ; - git add + commit
