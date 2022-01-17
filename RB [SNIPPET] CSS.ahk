@@ -120,6 +120,32 @@
 ::fg::flex-shrink:{SPACE};{LEFT} ; - запрещяет сужать контейнер (1 - можно, 0 - нельзя)
 ::fx::flex:{SPACE};{LEFT} ; - 
 
+
+; ==================================================================
+; ---------------------------- POSITION ----------------------------
+; ==================================================================
+
+::gcs::grid-column-start:{SPACE};{LEFT} ; - начало
+::gcs s::grid-column-start: span{SPACE};{LEFT} ; - начало
+::gce::grid-column-end:{SPACE};{LEFT} ; - конец (не включая последнюю)
+::gce s::grid-column-end: span{SPACE};{LEFT} ; - конец (указывает количество ячеек)
+::gc::grid-column: /{SPACE};{LEFT 3} ; - указать начало и конец 2/4 (не включая последнюю)
+::gc s::grid-column: span / span{SPACE};{LEFT 2} ; - указать начало и конец 2/4 (не включая последнюю)
+::grs::grid-row-start:{SPACE};{LEFT} ; - 
+
+::gr::grid-row: /{SPACE};{LEFT 3} ; - 
+::gr s::grid-row: span / span{SPACE};{LEFT} ; - 
+::ga::grid-area: / / /{SPACE};{LEFT}
+::gtc::grid-template-columns: {SPACE};{LEFT}
+::gtc r::grid-template-columns: repeat( , );{LEFT 3}
+::gtr::grid-template-rows: {SPACE};{LEFT}
+::gtr r::grid-template-rows: repeat( , );{LEFT 3}
+::gt::grid-template: /;{LEFT 3}
+::gcg::grid-column-gap:{SPACE};{LEFT}
+::grg::grid-row-gap:{SPACE};{LEFT}
+::grg::grid-gap:{SPACE};{LEFT}
+
+
 ; ==================================================================
 ; ---------------------------- POSITION ----------------------------
 ; ==================================================================
