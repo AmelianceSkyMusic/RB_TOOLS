@@ -17,8 +17,8 @@
 
  ; AHK1 RU help https://ahk-wiki.ru/hotstrings
 
-
- 
+#HotIf WinActive() HotIfWinNotActive("ahk_exe code.exe")
+RegRead()
 hotkey_var := "^!z" ; TEST — User hotkeys
 
 Hotkey hotkey_var, MyFunc
@@ -58,15 +58,15 @@ MyFunc(ThisHotkey)
 ; :*:кr2::Rsay@ukr.net
 
 ; ::r@::Radzhab@ukr.net
-; ::r2::Radzhab@ukr.net 
+; ::r2::Radzhab@ukr.net
 ; ::к@::Radzhab@ukr.net
-; ::к2::Radzhab@ukr.net 
+; ::к2::Radzhab@ukr.net
 
 ::rr::Rsay@ukr.net
 ::кк::Rsay@ukr.net
 
 ::r::Radzhab@ukr.net
-::к::Radzhab@ukr.net 
+::к::Radzhab@ukr.net
 
 
 ; ::ad@::AmelianceDesign@gmail.com
@@ -165,7 +165,7 @@ MyFunc(ThisHotkey)
 ; :*:<p::<p></p>{Left}{Left}{Left}{Left}
 
 ; *>!.:: Send"{U+00AB}{U+00BB}{Left}" ; » “
-; :*: —:: — 
+; :*: —:: —
 
 :x:p::SendInput("dribbble.com/rsayuaie^{enter}behance.net/rsayuaie")
 
@@ -180,13 +180,3 @@ MyFunc(ThisHotkey)
 ::р4::{#}{#}{#}{#}{SPACE}
 ::h5::{#}{#}{#}{#}{#}{SPACE}
 ::р5::{#}{#}{#}{#}{#}{SPACE}
-
-
-
-
-
-
-
-
-
-
