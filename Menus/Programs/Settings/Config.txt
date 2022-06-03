@@ -35,15 +35,14 @@
     -      Reaper                    r      lnk                 lnk                                             |
 ;---------------------------------------------------------------------------------------------------------------------------------------------------
     ----
-    -      Cent Browser              b      lnk                 run=lnk; exe=chrome                             |
-    -      Telegram                  |      lnk                 lnk                                             |
-    -      Viber                     v      lnk                 lnk                                             |
+    -      Telegram                  t      lnk                 lnk                                             |
+    -      Viber                     |      lnk                 lnk                                             |
     -      AIMP                      a      lnk                 lnk                                             |
-    -      Code                      |      lnk                 run=lnk; exe=code                               |
+    -      Code                      v      lnk                 run=lnk; exe=code                               |
     -      Obsidian                  |      lnk                 lnk                                             |
 ;---------------------------------------------------------------------------------------------------------------------------------------------------
     ----
-    -      Total Commander           t      lnk                 lnk                                             |
+    -      Total Commander           |      lnk                 lnk                                             |
 ;---------------------------------------------------------------------------------------------------------------------------------------------------
     ----
     -      Calculator                c      Calc.png            run=lnk; win=Калькулятор                        |
@@ -56,7 +55,7 @@
            -   Clipdiary             c      lnk                 lnk                                             |   
            -   ShareX                s      lnk                 lnk                                             |
            -   Gink                  g      lnk                 lnk                                             |
-           -   Epic Pen              |      lnk                 lnk                                             |
+           -   Epic Pen              p      lnk                 lnk                                             |
            -   OBS Studio            o      lnk                 lnk                                             |
            ----
            -   Carnac                |      |                   lnk                                             |
@@ -86,3 +85,6 @@
     -      |                         |      |                   |                                               |
     -      Config                    |      lnk                 run=pth; pth=D:\Others\Programs\AHK\RB TOOLS\Menus\Programs\Settings\Config.txt    check=true
 ;---------------------------------------------------------------------------------------------------------------------------------------------------
+    ----
+    -      |                         |      |                   |                                               |
+    -      Video changer CMD         1      lnk                 lnk                                             |

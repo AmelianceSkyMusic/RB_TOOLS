@@ -1,6 +1,6 @@
 ﻿; AHK2
 ;# Win   ! Alt   ^ Ctrl   + Shift
-; #SingleInstance ignore 
+; #SingleInstance ignore
 ; #If WinActive("ahk_exe Studio One.exe")
 #HotIf WinActive("ahk_exe Telegram.exe")
 
@@ -81,6 +81,16 @@ F4::{
 	Msg ("Save As")
 }
 
+
+~MButton::
+{
+	if mt("MButton") = 2 {
+		Send('^f')
+	} else {
+		Send('{Esc}')
+		Send('^f')
+	}
+}
 ; F2::{
 ; 	Send("{RButton}")
 ; 	Send("{Down}")

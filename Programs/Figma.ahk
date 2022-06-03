@@ -56,6 +56,7 @@ MouseOnRightArea_FC( )
 	MouseOnWorkArea := (MouseX > 1127) and (MouseY > 77 and MouseY < 767)
 	return MouseOnWorkArea
 }
+
 ; -------------------------------------------------------------------------------------------
 ; -----------------------------------INCLUDES-------------------------------------------
 ; -------------------------------------------------------------------------------------------
@@ -94,8 +95,8 @@ F1::Send "^+{\}" ; -- show hide layers
 ^!Numpad0::Send "^+{e}" ; -- show hide layers
 
 ; -------------------------------------------------------------------------------------------
-;Middle Mouse Button activates hand tool dragging. 
-MButton:: 
+;Middle Mouse Button activates hand tool dragging.
+MButton::
 {
 	Send "{Space down}"
 	Sleep 100
@@ -105,10 +106,10 @@ MButton::
 }
 
 ;Duplicate ASM
-;~ LButton & RButton:: 
+;~ LButton & RButton::
 ;~ send, ^c
 ;~ send, ^+v
-;~ Return 
+;~ Return
 
 ; -------------------------------------------------------------------------------------------
 ; --------------------------------IMAGE CLICK------------------------------------------
@@ -142,7 +143,7 @@ F9::isImageClick_FC(fg.img_path, "run_present.png", 20, 20)
 ; ---------- Add fill color style ----------
 #s::
 {
-	MouseGetPos(&start_xpos, &start_ypos)	
+	MouseGetPos(&start_xpos, &start_ypos)
 	layer_hide__color_style_yes := isImage_FC(fg.img_path, "layer_hide__color_style_yes.png")
 	layer_show__color_style_yes := isImage_FC(fg.img_path, "layer_show__color_style_yes.png")
 	if (layer_hide__color_style_yes.img_is){
@@ -157,7 +158,7 @@ F9::isImageClick_FC(fg.img_path, "run_present.png", 20, 20)
 	; }
 	; isImageWaitForImgClick_FC(fg.img_path, "color_styles_parameters.png", 160, 20)
 	color_style_bar := isImageWaitForImg_FC(fg.img_path, "color_style_bar.png")
-	
+
 	isImageWaitForImgClick_FC(fg.img_path, "selected_style.png", 160, 20, 2, false, , , color_style_bar.FoundX-100, color_style_bar.FoundY-100)
 	; if color_style_bar.img_is {
 	; 	Say(color_style_bar.FoundX)
@@ -199,7 +200,7 @@ $+NumpadEnter::
 			Send "^{v}"
 			Send "{enter}"
 		}
-	}							
+	}
 }
 
 ;------ Change proportional width and height and turn on constrain proportions
@@ -209,7 +210,7 @@ $^+NumpadEnter::
 	if NOT MouseOnRightArea_FC()
 	{
 
-		
+
 		Send "^+{enter}"
 	} else {
 		isImage_width_input_active := isImage_FC(fg.img_path, "width_input_active.png")
@@ -228,7 +229,7 @@ $^+NumpadEnter::
 			Send "{enter}"
 		}
 		isImageClick_FC(fg.img_path, "constrain_proportions_off.png", 0, 0)
-	}	
+	}
 }
 
 $^Enter::
@@ -371,7 +372,7 @@ $^s::
 ^i::
 {
 	Send "i"
-	KeyWait "LButton", "D" 
+	KeyWait "LButton", "D"
 	Sleep 200
 	isImage_toolbar_move_active := isImage_FC(fg.img_path, "toolbar_move_active.png")
 	if (isImage_toolbar_move_active.img_is){
@@ -380,44 +381,44 @@ $^s::
 }
 
 ; -------------------------------------------------------------------------------------------
-;Zoom in - Switches Ctrl+Wheelup with Wheelup 
-Wheelup:: 
-	{
-	if MouseOnWorkArea_FC() ; if mouse in on a work area then zoom in with switched  zoon
-	{
-		Send "{Ctrl down}"
-		Send "{Wheelup}"
-		Send "{Wheelup}"
-		Send "{Ctrl up}"
-		return
-	}
-	Send "{Wheelup}"					; else just scroll
-}
+; ;Zoom in - Switches Ctrl+Wheelup with Wheelup
+; $Wheelup::
+; {
+; 	if MouseOnWorkArea_FC() ; if mouse in on a work area then zoom in with switched  zoon
+; 	{
+; 		Send "{Ctrl down}"
+; 		Send "{Wheelup}"
+; 		Send "{Wheelup}"
+; 		Send "{Ctrl up}"
+; 		return
+; 	}
+; 	Send "{Wheelup}"					; else just scroll
+; }
 
-;Zoom out - Switches Ctrl+Wheeldown with Wheeldown 
-Wheeldown:: 
-{
-	if MouseOnWorkArea_FC()
-	{
-		Send "{Ctrl down}"
-		Send "{Wheeldown}"
-		Send "{Wheeldown}"
-		Send "{Ctrl up}"
-		return
-	}
-	Send "{Wheeldown}"
-}
+; ;Zoom out - Switches Ctrl+Wheeldown with Wheeldown
+; $Wheeldown::
+; {
+; 	if MouseOnWorkArea_FC()
+; 	{
+; 		Send "{Ctrl down}"
+; 		Send "{Wheeldown}"
+; 		Send "{Wheeldown}"
+; 		Send "{Ctrl up}"
+; 		return
+; 	}
+; 	Send "{Wheeldown}"
+; }
 
 ; -------------------------------------------------------------------------------------------
 ;Colour inactive element of shape ASM
-;~ RButton:: 
+;~ RButton::
 ;~ Send "x"
 ;~ Send "{LButton down}{LButton up}"
 ;~ Send "x"
 ;~ return
 
 ;Duplicate
-~LButton & RButton:: 
+~LButton & RButton::
 {
 	Send "{Alt down}"
 	KeyWait "LButton"
@@ -425,7 +426,7 @@ Wheeldown::
 }
 
 ;Del ASM
-~RButton & LButton:: 
+~RButton & LButton::
 {
 	Send "{Delete}"
 }
@@ -483,7 +484,7 @@ RunCommand_FC(Command)
 ;~ "Figma_files\img\text_active.png")
 isImage_FC(fg.img_path)
 {
-	 if ImageSearch(FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, fg.img_path) 
+	 if ImageSearch(FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, fg.img_path)
 			img_is:= true
 		else
 			img_is := false
@@ -605,7 +606,7 @@ setHeightWeight(w, h, proportionsTemp) {
 
 	changeFolder(thisGui, *)
 	{
-		
+
 		sevedElm := thisGui.Submit(false)  ; Save the contents of named controls into an object.
 		w := sevedElm.w
 		h := sevedElm.h
@@ -623,14 +624,14 @@ setHeightWeight(w, h, proportionsTemp) {
 		sleep 100
 
 		Send "{Enter}"
-		
+
 		if constrainProportions {
 			isImageClick_FC(fg.img_path, "constrain_proportions_off.png", 16, 16)
 		} else {
 			isImageClick_FC(fg.img_path, "constrain_proportions_on.png", 16, 16)
 		}
 
-		
+
 
 
 
@@ -720,6 +721,31 @@ fg_isImageRightClick(pth, img, x := 0, y := 0 ){
 
 
 ;~ SoundPlay "*-1"
+#HotIf (WinActive("ahk_exe Figma.exe") or WinActive("ahk_exe Figma Beta.exe")) and not WinActive("ahk_class #32770") and MouseOnWorkArea_FC()
+;Zoom in - Switches Ctrl+Wheelup with Wheelup
+$Wheelup::
+{
+	; if MouseOnWorkArea_FC() ; if mouse in on a work area then zoom in with switched  zoon
+	; {
+		Send "{Ctrl down}"
+		Send "{Wheelup}"
+		Send "{Wheelup}"
+		Send "{Ctrl up}"
+		return
+	; }
+	; Send "{Wheelup}"					; else just scroll
+}
 
-
-
+;Zoom out - Switches Ctrl+Wheeldown with Wheeldown
+$Wheeldown::
+{
+	; if MouseOnWorkArea_FC()
+	; {
+		Send "{Ctrl down}"
+		Send "{Wheeldown}"
+		Send "{Wheeldown}"
+		Send "{Ctrl up}"
+	; 	return
+	; }
+	; Send "{Wheeldown}"
+}

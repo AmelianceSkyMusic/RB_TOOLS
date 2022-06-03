@@ -1,0 +1,2 @@
+﻿WheelUp::AltTab
+WheelDown::ShiftAltTab

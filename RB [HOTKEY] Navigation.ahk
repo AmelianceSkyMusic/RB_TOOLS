@@ -1,6 +1,12 @@
 ﻿;# Win   ! Alt   ^ Ctrl   + Shift
 #HotIf
 ; navigation
+; CapsLock::{
+;     Send('{Blind}{CapsLock down}')
+;     sleep 5000
+;     Send('{Blind}{CapsLock up}')
+; }
+
 CapsLock & j::      Send("{Blind}{Left}")
 CapsLock & i::      Send("{Blind}{Up}")
 CapsLock & l::      Send("{Blind}{Right}")
@@ -9,6 +15,59 @@ CapsLock & u::      Send("{Blind}{Home}")
 CapsLock & o::      Send("{Blind}{End}")
 CapsLock & n::      Send("{Blind}{End}{Enter}")
 
+CapsLock & a::      Send("{Blind}{Left}")
+CapsLock & w::      Send("{Blind}{Up}")
+CapsLock & d::      Send("{Blind}{Right}")
+CapsLock & s::      Send("{Blind}{Down}")
+CapsLock & q::      Send("{Blind}{Home}")
+CapsLock & e::      Send("{Blind}{End}")
+CapsLock & z::      Send("{Blind}{BackSpace}")
+CapsLock & c::      Send("{Blind}{Del}")
+CapsLock & f::      Send("{Blind}{Enter}")
+
+CapsLock & -::      Send("{Blind}{BackSpace}")
+CapsLock & +::      Send("{Blind}{Del}")
+
+CapsLock & 2::      Send('{Blind}#{TAB}')
+CapsLock & 3::      Send('{Blind}^#{LEFT}')
+CapsLock & 4::      Send('{Blind}^#{RIGHT}')
+
+CapsLock & 8::      Send('{Blind}#{TAB}')
+CapsLock & 9::      Send('{Blind}^#{LEFT}')
+CapsLock & 0::      Send('{Blind}^#{RIGHT}')
+
+CapsLock & ,::      Send('{Blind}^z')
+CapsLock & .::      Send('{Blind}^+z')
+
+; #HotIf GetKeyState("Capslock", "T")
+;     j::      Send("{Blind}{Left}")
+;     i::      Send("{Blind}{Up}")
+;     l::      Send("{Blind}{Right}")
+;     k::      Send("{Blind}{Down}")
+;     u::      Send("{Blind}{Home}")
+;     o::      Send("{Blind}{End}")
+;     n::      Send("{Blind}{End}{Enter}")
+
+;     a::      Send("{Blind}{Left}")
+;     w::      Send("{Blind}{Up}")
+;     d::      Send("{Blind}{Right}")
+;     s::      Send("{Blind}{Down}")
+;     q::      Send("{Blind}{Home}")
+;     e::      Send("{Blind}{End}")
+;     z::      Send("{Blind}{BackSpace}")
+;     c::      Send("{Blind}{Del}")
+;     f::      Send("{Blind}{Enter}")
+
+;     -::      Send("{Blind}{BackSpace}")
+;     +::      Send("{Blind}{Del}")
+
+;     2::      Send('{Blind}#{TAB}')
+;     3::      Send('{Blind}^#{LEFT}')
+;     4::      Send('{Blind}^#{RIGHT}')
+
+;     8::      Send('{Blind}#{TAB}')
+;     9::      Send('{Blind}^#{LEFT}')
+;     0::      Send('{Blind}^#{RIGHT}')
 
 
 
@@ -20,8 +79,8 @@ CapsLock & n::      Send("{Blind}{End}{Enter}")
 ;       if WinExist("A") = item.hwnd {
 ;         explorerDir := item.document.folder.self.path
 ;         Break
-;       } 
-;     } 
+;       }
+;     }
 ;     Return
 ; #a::ControlClick("Edit1", "ahk_class #32770")
 ; #s::{
@@ -66,7 +125,7 @@ CapsLock & n::      Send("{Blind}{End}{Enter}")
 ;     Sleep 100
 ;     ControlSendText(backupName, "Edit1", "ahk_class #32770")
 
-; } 
+; }
 
 ; #HotIf WinActive("ahk_class #32770")
 ; !a::{
@@ -77,7 +136,7 @@ CapsLock & n::      Send("{Blind}{End}{Enter}")
 ;     ControlFocus("Edit1", "ahk_class #32770")
 ;     ControlSetText(explorerDir, "Edit2", "ahk_class #32770")
 
-; } 
+; }
 
 
 
@@ -112,7 +171,7 @@ CapsLock & n::      Send("{Blind}{End}{Enter}")
 ;     ; }
 ;     ; DetectHiddenText false
 
-; } 
+; }
 ; #HotIf WinActive("ahk_class #32770")
 ; !a::{
 ;     ; global explorerDir := ""
@@ -127,7 +186,7 @@ CapsLock & n::      Send("{Blind}{End}{Enter}")
 ;     ;     explorerDir := item.document.folder.self.path
 ;     ;     explorerD := "222"
 ;     ;     Break
-;     ;     } 
+;     ;     }
 ;     ; }
 ;     ; if explorerDir != "" {
 

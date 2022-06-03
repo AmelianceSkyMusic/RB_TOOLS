@@ -14,7 +14,7 @@
  ; t  - send raw without translating character to keystroke (t0/r0 - turn off)
  ; x  - execute (run code instead sending text)
  ; z  - reset hotstring processing (for preventing recursion on b0) (z0 - turn off)
- 
+
 
 
 
@@ -44,6 +44,7 @@
 :cx:ddd::Sleep(50), SendText(FormatTime(, "yyyy_MM_dd_"))
 :cx:ввв::Sleep(50), SendText(FormatTime(, "yyyy_MM_dd_"))
 
+:cx:cccc::Sleep(50), SendText('(' FormatTime(, "yyyy-MM-dd HH:mm:ss ddd") ')') ;
 
 ; :*:_СБ::_СБОРКА
 ; :*:_ПР::_ПРИНТБИСТРО

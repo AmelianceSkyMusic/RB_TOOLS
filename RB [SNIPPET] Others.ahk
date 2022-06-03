@@ -17,16 +17,18 @@
 
  ; AHK1 RU help https://ahk-wiki.ru/hotstrings
 
-#HotIf WinActive() HotIfWinNotActive("ahk_exe code.exe")
-RegRead()
-hotkey_var := "^!z" ; TEST — User hotkeys
+; #HotIf WinActive() HotIfWinNotActive("ahk_exe code.exe")
+; #HotIf
+#HotIf not WinActive("ahk_exe code.exe")
+; RegRead()
+; hotkey_var := "^!z" ; TEST — User hotkeys
 
-Hotkey hotkey_var, MyFunc
+; Hotkey hotkey_var, MyFunc
 
-MyFunc(ThisHotkey)
-{
-    MsgBox "You pressed " ThisHotkey
-}
+; MyFunc(ThisHotkey)
+; {
+;     MsgBox "You pressed " ThisHotkey
+; }
 
 
 ; e-mails
@@ -61,6 +63,9 @@ MyFunc(ThisHotkey)
 ; ::r2::Radzhab@ukr.net
 ; ::к@::Radzhab@ukr.net
 ; ::к2::Radzhab@ukr.net
+
+::rrr::rsay.uaie@gmail.com
+::ккк::rsay.uaie@gmail.com
 
 ::rr::Rsay@ukr.net
 ::кк::Rsay@ukr.net
@@ -144,7 +149,7 @@ MyFunc(ThisHotkey)
 ;     behance.net/rsayuaie
 ; )
 
-::ta::t.me/amelianceskymusic
+::ta::https://t.me/amelianceskymusic
 ::@a::@amelianceskymusic
 :*:t.me/a::t.me/amelianceskymusic
 ; :*:імя::(ім'я)
@@ -168,15 +173,3 @@ MyFunc(ThisHotkey)
 ; :*: —:: —
 
 :x:p::SendInput("dribbble.com/rsayuaie^{enter}behance.net/rsayuaie")
-
-#HotIf WinActive("ahk_exe Obsidian.exe")
-::h1::{#}{SPACE}
-::р1::{#}{SPACE}
-::h2::{#}{#}{SPACE}
-::р2::{#}{#}{SPACE}
-::h3::{#}{#}{#}{SPACE}
-::р3::{#}{#}{#}{SPACE}
-::h4::{#}{#}{#}{#}{SPACE}
-::р4::{#}{#}{#}{#}{SPACE}
-::h5::{#}{#}{#}{#}{#}{SPACE}
-::р5::{#}{#}{#}{#}{#}{SPACE}

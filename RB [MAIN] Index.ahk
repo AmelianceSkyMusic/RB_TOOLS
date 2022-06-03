@@ -1,4 +1,7 @@
-﻿;# Win   ! Alt   ^ Ctrl   + Shift
+﻿; LWin & WheelDown::AltTab
+; LWin & WheelUp::ShiftAltTab
+
+;# Win   ! Alt   ^ Ctrl   + Shift
 #SingleInstance Force
 Persistent
 ; SetKeyDelay -1
@@ -11,15 +14,17 @@ SetDefaultMouseSpeed 0
 SetWorkingDir A_ScriptDir
 ; CoordMode "Mouse"
 ; CoordMode "Pixel"
-
+A_MaxHotkeysPerInterval := 200
 ; index := {}
 ; index.scriptDir := A_ScriptDir
 
 index_ahk := {}
 index_ahk.data := A_WorkingDir "\Data\"
 index_ahk.isSuspended := true
-
-
+SCREEN_X_START := 0
+SCREEN_Y_START := 0
+SCREEN_X_END := SysGet(78) - 1
+SCREEN_Y_END := SysGet(79) - 1
 
 !#Esc::
 {
@@ -33,7 +38,8 @@ index_ahk.isSuspended := true
 !Esc::reload
 #y::MsgBox WinGetTitle("A")
 
-
+; LWin & WheelUp::AltTab
+; LWin & WheelDown::ShiftAltTab
 ; -----------------------------------------------------------------
 ; --------------------------- TRAY MENU ---------------------------
 ; -----------------------------------------------------------------
@@ -131,6 +137,7 @@ programs.dir := A_ScriptDir "\Programs\"
 #Include Programs\Explorer.ahk
 #Include Programs\Obsidian.ahk
 #Include Programs\Chrome.ahk
+#Include Programs\Visual Studio Code.ahk
 
 
 ProgramMenu := createMenu("Programs", A_ScriptDir "\Menus\Programs")
@@ -176,8 +183,253 @@ readReload(index_ahk.data "reload")
 ; if FileExist(index_ahk.data "autorun.txt") {
 ;     autorunStr := FileRead(index_ahk.data "autorun.txt")
 ; }
+; #HotIf GetKeyState("Alt", "P")
+; q::MsgBox "Hotkey activated."
 
 
+; #HotIf GetKeyState("ALT")
+; q::MsgBox
+
+; #HotIf                        WinExist("ahk_class MultitaskingViewFrame") or WinExist("ahk_class TaskSwitcherWnd") or WinExist("ahk_class #32771") ;;Windows\task list
+;   *WheelUp::                  +Tab ;;select ⇠ app
+;   *WheelDown::                Tab ;;select ⇢ app
+;   *RButton::                  Enter ;;open focused app
+
+; #HotIf "ahk_class MultitaskingViewFrame"
+
+; LWin & WheelDown::{
+;     Send(AltTab)
+; }
+; LWin & WheelUp::{
+;     Send(ShiftAltTab)
+; }
+
+#HotIf
+
+!#WheelDown::GetKeyState("Control")? Send("^#{Right}") : (Send("{Alt down}{Tab}"), SetTimer(() => (KeyWait("LWin"), Send("{Alt up}")), -100))
+!#WheelUp:: GetKeyState("Control")? Send("^#{Left}") : (Send("{Alt down}+{Tab}"), SetTimer(() => (KeyWait("LWin"), Send("{Alt up}")), -100))
+
+; *F1::Send "{Alt down}{tab}" ; Asterisk is required in this case.
+; !F2::Send "{Alt up}"  ; Release the Alt key, which activates the selected window.
+; #HotIf WinExist("ahk_group AltTabWindow")
+; ~*Esc::Send "{Alt up}"  ; When the menu is cancelled, release the Alt key automatically.
+; ;*Esc::Send "{Esc}{Alt up}"  ; Without tilde (~), Escape would need to be sent.
+; #HotIf
+
+
+
+#WheelDown::Send('{Blind}^#{RIGHT}') sleep(150)
+#WheelUp::Send('{Blind}^#{LEFT}') sleep(150)
+#Mbutton::Send('{Blind}#{TAB}')
+
+; LWin & WheelDown::AltTab
+; LWin & WheelUp::ShiftAltTab
+; MButton::AltTabMenu
+
+
+; ^#MButton::CtrlWinMenu
+; ^#Wheelup::CtrlWinRight
+; ^#WheelDown::CtrlWinLeft
+isMouseOnTop(){
+    CoordMode "Mouse", "Screen"
+    MouseGetPos(&MouseX, &MouseY)
+    MouseOnBottom := (MouseX >= SCREEN_X_START and MouseX <= SCREEN_X_END)
+                 and (MouseY >= SCREEN_Y_START and MouseY <= SCREEN_Y_START+10)
+    return MouseOnBottom
+}
+
+isMouseOnBottom(){
+    CoordMode "Mouse", "Screen"
+    MouseGetPos(&MouseX, &MouseY)
+    MouseOnTop := (MouseX >= SCREEN_X_START     and MouseX <= SCREEN_X_END)
+              and (MouseY >= SCREEN_Y_END-10    and MouseY <= SCREEN_Y_END)
+    return MouseOnTop
+}
+
+isMouseOnRightEdge(){
+    CoordMode "Mouse", "Screen"
+    MouseGetPos(&MouseX, &MouseY)
+    MouseOnRightEdge := (MouseX >= SCREEN_X_END-1   and MouseX <= SCREEN_X_END)
+                    and (MouseY >= SCREEN_Y_START   and MouseY <= SCREEN_Y_END)
+    return MouseOnRightEdge
+}
+
+; isMouseOnLeftEdge(){
+;     CoordMode "Mouse", "Screen"
+;     MouseGetPos(&MouseX, &MouseY)
+;     MouseOnLeftEdge := (MouseX >= 0  and MouseX <= 0) and (MouseY >= 0 and MouseY <= 767)
+;     return MouseOnLeftEdge
+; }
+
+#HotIf isMouseOnTop()
+WheelDown::{
+    Send('{Blind}^#{RIGHT}')
+    sleep(150)
+}
+WheelUp::{
+    Send('{Blind}^#{LEFT}')
+    sleep(150)
+}
+
+#HotIf isMouseOnBottom()
+WheelDown::{
+    Send('{ALT DOWN}{TAB}')
+    KeyWait('LBUTTON', 'D T2')
+    Send('{ALT UP}')
+}
+WheelUp::{
+    Send('{ALT DOWN}{SHIFT}{TAB}')
+    KeyWait('LBUTTON', 'D T2')
+    Send('{ALT UP}')
+}
+
+#HotIf isMouseOnRightEdge()
+WheelDown::{
+    Send('{LWIN DOWN}{SPACE}')
+    KeyWait('LBUTTON', 'D T0.3')
+    Send('{LWIN UP}')
+}
+WheelUp::{
+    Send('{LWIN DOWN}{SHIFT DOWN}{SPACE}')
+    KeyWait('LBUTTON', 'D T0.3')
+    Send('{LWIN UP}{SHIFT UP}')
+}
+
+
+; $WheelDown::{
+;     if (isMouseOnTop()){
+;         Send('{Blind}^#{RIGHT}')
+;         sleep(150)
+;         return
+;     } else if (isMouseOnBottom()) {
+;         Send('{ALT DOWN}{TAB}')
+;         KeyWait('LBUTTON', 'D T2')
+;         Send('{ALT UP}')
+;         return
+;     } else if (isMouseOnRightEdge()) {
+;         Send('{LWIN DOWN}{SPACE}')
+;         KeyWait('LBUTTON', 'D T0.3')
+;         Send('{LWIN UP}')
+;         return
+;     }
+;     Send('{WheelDown}')
+; }
+
+; $WheelUp::{
+;     if (isMouseOnTop()){
+;         Send('{Blind}^#{LEFT}')
+;         sleep(150)
+;         return
+;     }else if (isMouseOnBottom()) {
+;         Send('{ALT DOWN}{SHIFT}{TAB}')
+;         KeyWait('LBUTTON', 'D T2')
+;         Send('{ALT UP}')
+;         return
+;     } else if (isMouseOnRightEdge()) {
+;         Send('{LWIN DOWN}{SHIFT DOWN}{SPACE}')
+;         KeyWait('LBUTTON', 'D T0.3')
+;         Send('{LWIN UP}{SHIFT UP}')
+;         return
+;     }
+;     Send('{WheelUp}')
+; }
+; If (GetKeyState("Alt","P"))
+
+
+; ;Zoom in - Switches Ctrl+Wheelup with Wheelup
+; ^#Wheelup::
+; {
+; ; if isMouseOnTopRigthCorner() ; if mouse in on a work area then zoom in with switched  zoon
+; ;     {
+;         ; Msg('Next', 0.1)
+;         Send('^#{LEFT}')
+;         return
+;     ; }
+;     ; Send "{Wheelup}"					; else just scroll
+; }
+
+; ;Zoom out - Switches Ctrl+Wheeldown with Wheeldown
+; ^#Wheeldown::
+; {
+;     ; if isMouseOnTopRigthCorner()
+;     ; {
+;         ; Msg('Previous', 0.1)
+;         Send('^#{RIGHT}')
+;         return
+;     ; }
+;     ; Send "{Wheeldown}"
+; }
+
+
+; ~!#Wheelup::
+; {
+;     if ('WheelUp' && A_TimeSincePriorHotkey < 200)
+;         MsgBox "double-press"
+; }
+
+
+; u::
+; {
+;     Send('{ALT DOWN}')
+;     Send('{TAB}')
+;     Sleep 1000
+
+;     while GetKeyState("ALT")
+;     {
+;     ;     ; KeyWait('WheelUp', 'D')
+;     ;     ; Send('!{TAB}')
+;     ;     Msg "ok"
+;     }
+
+
+
+
+
+
+;     ; }
+;     ; KeyWait('ALT', 'D')
+
+;     ; Send('{ENTER}')
+;         Send('{ALT UP}')
+
+
+
+;     mtcc(key, deley := 200) {
+
+;         counter := 1
+;         while KeyWait(key, "T." deley)
+
+;             if KeyWait(key, "D T.1") {
+;                 counter++
+;             } else {
+;                 return counter
+;             }
+
+;         KeyWait(key)
+
+;         return -counter
+;     }
+; }
+
+; !#Wheeldown::
+; {
+
+
+;     Send('{ALT DOWN}')
+;     Send('!+{TAB}')
+;     Send('{ALT UP}')
+;     return
+; }
+
+; #HotIf WinActive("ahk_class Windows.UI.Core.CoreWindow ahk_exe explorer.exe") ;Windows\Task list (win-tab)
+;   *WheelUp::                  Left ;;select ⇠ app
+;   *WheelDown::                Right ;;select ⇢ app
+; ;   *RButton::                  isLongTap()? Send("{Enter}") : pass() ;;context menu ◼️1⌚️ open focused app
+
+; #HotIf WinExist("ahk_class MultitaskingViewFrame") or WinExist("ahk_class TaskSwitcherWnd") or WinExist("ahk_class #32771") ;Windows\task list
+;   *WheelUp::                  +Tab ;;select ⇠ app
+;   *WheelDown::                Tab ;;select ⇢ app
+; ;   *RButton::                  Enter ;;open focused app
 
 
 
@@ -194,7 +446,7 @@ readReload(index_ahk.data "reload")
     ; switch l := mt("LShift") {
     ;     case 1: Send "{LShift}"
     ;     case 2: {
- 
+
     ;     }
     ;     default: Send "{LShift}"
     ; }

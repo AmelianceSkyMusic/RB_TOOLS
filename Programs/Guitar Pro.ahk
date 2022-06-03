@@ -1,6 +1,6 @@
 ﻿; AHK2
 ;# Win   ! Alt   ^ Ctrl   + Shift
-; #SingleInstance ignore 
+; #SingleInstance ignore
 ; #If WinActive("ahk_exe Studio One.exe")
 
 global gp := {}
@@ -70,7 +70,7 @@ F1::{
 ; --------------------------------------------
 	; --- Copy
 	XButton1::
-	^LButton::{ 
+	^LButton::{
 		Send "^c"
 		Send "{Enter}"
 		Msg("Copy")
@@ -94,7 +94,7 @@ F1::{
 
 	; --- Copy from all tracks
 	+XButton1::
-	^!LButton::{ 
+	^!LButton::{
 		Send "^c"
 		if WinWait("ahk_class TFMesureCopier", ,0.5) {
 			SetControlDelay -1
@@ -122,7 +122,7 @@ F1::{
 
 	; --- Paste replace
 	+XButton2::
-	^+LButton::{ 
+	^+LButton::{
 		Send "^v"
 		Send "{Enter}"
 		Msg("Paste replace")
@@ -175,7 +175,7 @@ F1::{
 
 ; --------------------------------------------
     +Mbutton::Send("{Enter}"), Msg("Enter")
-	
+
 }
 
 
@@ -291,8 +291,3 @@ F1::{
 
 	F3::Send "{F8}"
 }
-
-
-
-
-  
