@@ -110,7 +110,6 @@ isImageClick_FC(img_path, img_name, plus_click_x, plus_click_y, clicks:=1, moveB
 		y2 := A_ScreenHeight
 
 	img_path_full := img_path img_name
-	MsgBox(img_path_full)
 
 	MouseGetPos(&start_xpos, &start_ypos)
 	Try{

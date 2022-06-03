@@ -21,51 +21,71 @@ configPath := A_ScriptDir '\config.ini'
 if FileExist(configPath) {
 
     sectionNamesString := IniRead(configPath) ; Get selection names in separete '`n' string
+    windowsMap := Map()
 
-    addListener(title, prevHotkey, nextHotkey) {
-        key := prevHotkey ? prevHotkey : nextHotkey
-        Loop Parse, sectionNamesString, '`n', '`r' { ; Get all sections count
-            sectionName := A_LoopField ; section name
-            imgPath := A_ScriptDir '\img\'
-            img                    := IniRead(configPath, sectionName, 'img_path')
-            previousCoordinatesOffset  := IniRead(configPath, sectionName, 'previous_coordinates_offset')
-            nextCoordinatesOffset      := IniRead(configPath, sectionName, 'next_coordinates_offset')
-            title := WinGetTitle("A")
-            if title = sectionName {
-                ; Msg(imgPath)
-                try {
-                    isImageClick_FC(imgPath, img, 16, 16)
-                } catch error {
-                    Msg(error)
-                }
-                ; MsgBox(imgPath)
+    addListener(title, key, windowsMap) {
+
+        imgPath := A_ScriptDir '\img\'
+        title := WinGetTitle('A')
+        Try {
+            if (windowsMap[title][key]['img']) {
+                img := windowsMap[title][key]['img']
+                xOffset := windowsMap[title][key]['xOffset']
+                yOffset := windowsMap[title][key]['yOffset']
+                isImageClick_FC(imgPath, img, xOffset, yOffset)
             }
+        } catch error {
+            Msg('No window on focus!')
         }
+
     }
 
 
     Loop Parse, sectionNamesString, '`n', '`r' { ; Get all sections count
 
-
         sectionName := A_LoopField ; section name
 
         sectionLines  := IniRead(configPath, sectionName)
+
+        windowsMap[sectionName] := Map()
+
         Loop Parse, sectionLines, '`n', '`r' { ; Get all sections count
-            key     := Trim(StrSplit(StrSplit(A_LoopField, "=")[2], "=")[0])
-            xOffset := Trim(StrSplit(StrSplit(A_LoopField, "=")[2], "=")[1])
-            yOffset := Trim(StrSplit(StrSplit(A_LoopField, "=")[2], "=")[2])
-            img     := Trim(StrSplit(StrSplit(A_LoopField, "=")[2], "=")[2])
-        }
 
-        do(key) {
-            addListener(sectionName, '', key)
-        }
+            params := StrSplit(A_LoopField, '=')[2]
 
-        hotkey key, do
+            userkeyCustom := Trim(StrSplit(params, '|')[1])
+            userkey := ''
+            Loop parse, userkeyCustom, "+" {
+                covertedKey := StrLower(A_LoopField)
+                covertedKey := StrReplace(covertedKey, 'shift', '+')
+                covertedKey := StrReplace(covertedKey, 'ctrl', '^')
+                covertedKey := StrReplace(covertedKey, 'alt', '!')
+                covertedKey := StrReplace(covertedKey, 'win', '#')
+                userkey := userkey covertedKey
+            }
+
+            xOffset := Trim(StrSplit(params, '|')[2])
+            yOffset := Trim(StrSplit(params, '|')[3])
+            img     := Trim(StrSplit(params, '|')[4])
+
+            windowsMap[sectionName].Set(
+                userkey,
+                Map(
+                    'xOffset', xOffset,
+                    'yOffset', yOffset,
+                    'img', img
+                )
+            )
+
+            do(key) {
+                addListener(sectionName, key, windowsMap)
+            }
+
+            hotkey userkey, do
+        }
 
     }
 
 } else {
-
     MsgBox 'The target file does not exist.'
 }
