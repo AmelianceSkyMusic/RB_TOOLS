@@ -32,7 +32,7 @@ if FileExist(configPath) {
             nextCoordinatesOffset      := IniRead(configPath, sectionName, 'next_coordinates_offset')
             title := WinGetTitle("A")
             if title = sectionName {
-                Msg(imgPath)
+                ; Msg(imgPath)
                 try {
                     isImageClick_FC(imgPath, img, 16, 16)
                 } catch error {
@@ -49,18 +49,19 @@ if FileExist(configPath) {
 
         sectionName := A_LoopField ; section name
 
-        previousHotkey  := IniRead(configPath, sectionName, 'previous_hotkey')
-        nextHotkey      := IniRead(configPath, sectionName, 'next_hotkey')
-
-        doPrev(key) {
-            addListener(sectionName, key, '')
+        sectionLines  := IniRead(configPath, sectionName)
+        Loop Parse, sectionLines, '`n', '`r' { ; Get all sections count
+            key     := Trim(StrSplit(StrSplit(A_LoopField, "=")[2], "=")[0])
+            xOffset := Trim(StrSplit(StrSplit(A_LoopField, "=")[2], "=")[1])
+            yOffset := Trim(StrSplit(StrSplit(A_LoopField, "=")[2], "=")[2])
+            img     := Trim(StrSplit(StrSplit(A_LoopField, "=")[2], "=")[2])
         }
-        doNext(key) {
+
+        do(key) {
             addListener(sectionName, '', key)
         }
 
-        hotkey previousHotkey, doPrev
-        hotkey nextHotkey, doNext
+        hotkey key, do
 
     }
 
