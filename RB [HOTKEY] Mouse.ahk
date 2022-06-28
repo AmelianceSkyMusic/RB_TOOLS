@@ -23,7 +23,7 @@
   {
     ; Send "{LButton}"
     if tr.mouseClickSoundState != false {
-      SoundPlay "Media_files\mouse_click.mp3", -1000 
+      SoundPlay "Media_files\mouse_click.mp3", -1000
     }
   }
 
@@ -89,3 +89,10 @@ XButton2::Click 2
   XButton1::Send("!{Tab}")
   XButton2::Send("+!{Tab}")
 }
+
+
+; #HotIf WinActive("ahk_exe chrome.exe")
+; XButton1::{
+;   Send "^+3"
+;   Send "^+h"
+; }

@@ -1,16 +1,15 @@
 ﻿;# Win   ! Alt   ^ Ctrl   + Shift
 
-
 #1::
 {
-  PostMessage 0x0050, 0, 0x4190419,, "A"  ; RU 0x0050 is WM_INPUTLANGCHANGEREQUEST
-  Msg("Russian")
+  PostMessage 0x0050, 0, 0x4090409,, "A"  ; US 0x0050 is WM_INPUTLANGCHANGEREQUEST
+  Msg("English")
 }
 
 #2::
 {
-  PostMessage 0x0050, 0, 0x4090409,, "A"  ; US 0x0050 is WM_INPUTLANGCHANGEREQUEST
-  Msg("English")
+  PostMessage 0x0050, 0, 0x4190419,, "A"  ; RU 0x0050 is WM_INPUTLANGCHANGEREQUEST
+  Msg("Russian")
 }
 
 #3::
@@ -18,6 +17,25 @@
   PostMessage 0x0050, 0, 0x4220422,, "A"  ; UA 0x0050 is WM_INPUTLANGCHANGEREQUEST
   Msg("Ukrainian")
 }
+
+; +Space::
+; {
+;   PostMessage 0x0050, 0, 0x4090409,, "A"  ; US 0x0050 is WM_INPUTLANGCHANGEREQUEST
+;   Msg("English")
+; }
+
+; #Space::
+; {
+;   PostMessage 0x0050, 0, 0x4190419,, "A"  ; RU 0x0050 is WM_INPUTLANGCHANGEREQUEST
+;   Msg("Russian")
+; }
+
+
+; !Space::
+; {
+;   PostMessage 0x0050, 0, 0x4220422,, "A"  ; UA 0x0050 is WM_INPUTLANGCHANGEREQUEST
+;   Msg("Ukrainian")
+; }
 
 
 

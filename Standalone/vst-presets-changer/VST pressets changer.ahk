@@ -35,7 +35,7 @@ if FileExist(configPath) {
                 isImageClick_FC(imgPath, img, xOffset, yOffset)
             }
         } catch error {
-            Msg('No window on focus!')
+            Msg('No window in focus!')
         }
 
     }
