@@ -91,8 +91,23 @@ XButton2::Click 2
 }
 
 
-; #HotIf WinActive("ahk_exe chrome.exe")
-; XButton1::{
-;   Send "^+3"
-;   Send "^+h"
-; }
+
+
+#HotIf WinActive("ahk_exe chrome.exe")
+XButton1::{
+  ; Send "^+3"
+  Send "{Click 3}"
+  Sleep 200
+  Send "^+h"
+}
+
+~LButton & RButton::
+{
+    Send "{Enter}"
+}
+
+
+; CapsLock & ~LButton:: Send("{Blind}{Left}")
+; CapsLock & ~RButton:: Send("{Blind}{Right}")
+; CapsLock & ~WheelUp:: Send("{Blind}{Up}")
+; CapsLock & ~WheelDown:: Send("{Blind}{Down}")
