@@ -233,8 +233,7 @@ readReload(index_ahk.data "reload")
 isMouseOnTop(){
     CoordMode "Mouse", "Screen"
     MouseGetPos(&MouseX, &MouseY)
-    MouseOnBottom := (MouseX >= SCREEN_X_START and MouseX <= SCREEN_X_END)
-                 and (MouseY >= SCREEN_Y_START and MouseY <= SCREEN_Y_START+10)
+    MouseOnBottom := (MouseY >= SCREEN_Y_START and MouseY <= SCREEN_Y_START+5)
     return MouseOnBottom
 }
 
@@ -261,7 +260,15 @@ isMouseOnRightEdge(){
 ;     return MouseOnLeftEdge
 ; }
 
-#HotIf isMouseOnTop()
+isMouseOnTopOfSecondMonitor(){
+    MonitorGet 2, &LEFT, &TOP, &RIGHT, &BOTTOM
+    CoordMode "Mouse", "Screen"
+    MouseGetPos(&MouseX, &MouseY)
+    MouseOnBottom := (MouseY >= TOP and MouseY <= TOP+5)
+    return MouseOnBottom
+}
+
+#HotIf isMouseOnTop() || isMouseOnTopOfSecondMonitor()
 WheelDown::{
     Send('{Blind}^#{RIGHT}')
     sleep(150)
