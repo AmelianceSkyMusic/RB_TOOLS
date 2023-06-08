@@ -12,6 +12,8 @@ global vsc := {}
 vsc.name := "Visual Stuion COde"
 vsc.img_path := A_ScriptDir "\Programs\Visual Studio Code\Images\"
 
+SetCapsLockState "AlwaysOff"
+
 ; F3::{
 ; 	ToolTip("Hello")
 ; 	Sleep(5000)

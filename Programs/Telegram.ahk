@@ -17,6 +17,15 @@ tg.img_path := A_ScriptDir "\Programs\Telegram\Images\"
 ; 	ToolTip()
 ; }
 
+:c1:LL::пан Дмитро
+:c1:ДД::пан Дмитро
+:c1:HH::пан Раджаб
+:c1:РР::пан Раджаб
+:c1:YY::пані Наталя
+:c1:НН::пані Наталя
+:c1:SS::пані Ірина
+:c1:ІІ::пані Ірина
+
 F1::{
 	Send("{RButton}")
 	image := "edit.png"

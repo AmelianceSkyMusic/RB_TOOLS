@@ -7,37 +7,40 @@
 ;     Send('{Blind}{CapsLock up}')
 ; }
 
-CapsLock & j::      Send("{Blind}{Left}")
-CapsLock & i::      Send("{Blind}{Up}")
-CapsLock & l::      Send("{Blind}{Right}")
-CapsLock & k::      Send("{Blind}{Down}")
-CapsLock & u::      Send("{Blind}{Home}")
-CapsLock & o::      Send("{Blind}{End}")
-CapsLock & n::      Send("{Blind}{End}{Enter}")
+^Launch_App2:: Send("{Blind}^{BackSpace}")
+Launch_App2:: Send("{Blind}{BackSpace}")
 
-CapsLock & a::      Send("{Blind}{Left}")
-CapsLock & w::      Send("{Blind}{Up}")
-CapsLock & d::      Send("{Blind}{Right}")
-CapsLock & s::      Send("{Blind}{Down}")
-CapsLock & q::      Send("{Blind}{Home}")
-CapsLock & e::      Send("{Blind}{End}")
-CapsLock & z::      Send("{Blind}{BackSpace}")
-CapsLock & c::      Send("{Blind}{Del}")
-CapsLock & f::      Send("{Blind}{Enter}")
+CapsLock & j:: Send("{Blind}{Left}")
+CapsLock & i:: Send("{Blind}{Up}")
+CapsLock & l:: Send("{Blind}{Right}")
+CapsLock & k:: Send("{Blind}{Down}")
+CapsLock & u:: Send("{Blind}{Home}")
+CapsLock & o:: Send("{Blind}{End}")
+CapsLock & n:: Send("{Blind}{End}{Enter}")
 
-CapsLock & -::      Send("{Blind}{BackSpace}")
-CapsLock & +::      Send("{Blind}{Del}")
+CapsLock & a:: Send("{Blind}{Left}")
+CapsLock & w:: Send("{Blind}{Up}")
+CapsLock & d:: Send("{Blind}{Right}")
+CapsLock & s:: Send("{Blind}{Down}")
+CapsLock & q:: Send("{Blind}{Home}")
+CapsLock & e:: Send("{Blind}{End}")
+CapsLock & z:: Send("{Blind}{BackSpace}")
+CapsLock & c:: Send("{Blind}{Del}")
+CapsLock & f:: Send("{Blind}{Enter}")
 
-CapsLock & 2::      Send('{Blind}#{TAB}')
-CapsLock & 3::      Send('{Blind}^#{LEFT}')
-CapsLock & 4::      Send('{Blind}^#{RIGHT}')
+CapsLock & -:: Send("{Blind}{BackSpace}")
+CapsLock & +:: Send("{Blind}{Del}")
 
-CapsLock & 8::      Send('{Blind}#{TAB}')
-CapsLock & 9::      Send('{Blind}^#{LEFT}')
-CapsLock & 0::      Send('{Blind}^#{RIGHT}')
+CapsLock & 2:: Send('{Blind}#{TAB}')
+CapsLock & 3:: Send('{Blind}^#{LEFT}')
+CapsLock & 4:: Send('{Blind}^#{RIGHT}')
 
-CapsLock & ,::      Send('{Blind}^z')
-CapsLock & .::      Send('{Blind}^+z')
+CapsLock & 8:: Send('{Blind}#{TAB}')
+CapsLock & 9:: Send('{Blind}^#{LEFT}')
+CapsLock & 0:: Send('{Blind}^#{RIGHT}')
+
+CapsLock & ,:: Send('{Blind}^z')
+CapsLock & .:: Send('{Blind}^+z')
 
 ; #HotIf GetKeyState("Capslock", "T")
 ;     j::      Send("{Blind}{Left}")
@@ -68,10 +71,6 @@ CapsLock & .::      Send('{Blind}^+z')
 ;     8::      Send('{Blind}#{TAB}')
 ;     9::      Send('{Blind}^#{LEFT}')
 ;     0::      Send('{Blind}^#{RIGHT}')
-
-
-
-
 
 ; #HotIf WinActive("ahk_exe explorer.exe")
 ;   !a:: ;store current folder
@@ -110,7 +109,6 @@ CapsLock & .::      Send('{Blind}^+z')
     ControlFocus "Edit1", "A"
 }
 
-
 ; #HotIf WinActive("ahk_class #32770")
 ; !a::{
 
@@ -137,11 +135,6 @@ CapsLock & .::      Send('{Blind}^+z')
 ;     ControlSetText(explorerDir, "Edit2", "ahk_class #32770")
 
 ; }
-
-
-
-
-
 
 ; !a::{
 ; ; DetectHiddenText true
